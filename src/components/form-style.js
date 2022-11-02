@@ -41,3 +41,9 @@ export const DivIconWeather = styled.div`
         font-weight: 700;
     }
 `;
+
+export const DivWeatherData = styled.div`
+display: grid;
+    align-items: center;
+    justify-content: center;
+`;

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { Input, Label, Button, DivIconWeather } from "./form-style";
+import { Input, Label, Button, DivIconWeather, DivWeatherData } from "./form-style";
 
 function Form() {
   const [city, setCity] = useState();
@@ -37,7 +37,7 @@ function Form() {
 
       {weather && (
         <>
-          <div id="weather-data">
+          <DivWeatherData id="weather-data">
             <h2>
               <span id="city">{weather.name}</span>
             </h2>
@@ -49,11 +49,7 @@ function Form() {
               />
               <p id="temperatura">{weather.main.temp.toFixed()}&deg;</p>
             </DivIconWeather>
-          </div>
-
-          <div id="description-container">
-            {/* <p id="description">{weather.weather[0].description}</p> */}
-          </div>
+          </DivWeatherData>
         </>
       )}
     </form>

@@ -4,7 +4,7 @@ import Form from "./form";
 function InitialScreen() {
   return (
     <>
-      <h1>Tempo agora em {'{nome da cidade}'}</h1>
+      <h1>Veja como está o tempo agora na sua cidade!</h1>
       <Form />
     </>
   );

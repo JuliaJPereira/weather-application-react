@@ -1,64 +1,70 @@
+import axios from "axios";
 import React from "react";
+import { useState } from "react";
 import { Label } from "./form-style";
 
 function Form() {
+  const [city, setCity] = useState();
+  const [weather, setWeather] = useState();
+  const onClick = async (e) => {
+    e.preventDefault();
+    let response1 = await axios.get(
+      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=e83ae355fb450341a30c6df3a60135d7`
+    );
+    let response2 = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${response1.data[0].lat}&lon=${response1.data[0].lon}&appid=e83ae355fb450341a30c6df3a60135d7&units=metric`
+    );
+    setWeather(response2.data);
+  };
+  console.log(weather);
   return (
     <form>
       <Label>
-        <input type={"text"} name="city" placeholder="Busque por uma cidade" />
-        <button className="btn-search">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-            />
-          </svg>
+        <input
+          type={"text"}
+          name="city"
+          placeholder="Busque por uma cidade"
+          onChange={(e) => setCity(e.target.value)}
+          value={city}
+        />
+        <button className="btn-search" onClick={onClick}>
           Buscar
         </button>
       </Label>
 
-      <div id="weather-data">
-        <h2>
-          <i class="fa-solid fa-location-dot"></i>
-          <span id="city">Blumenau</span>
-          <img
-            src="https://countryflagsapi.com/png/br"
-            alt="bandeira do país"
-            id="bandeira-pais"
-          />
-        </h2>
-        <p id="temperatura">25&deg;</p>
-      </div>
+      {weather && (
+        <>
+          <div id="weather-data">
+            <h2>
+              <i className="fa-solid fa-location-dot"></i>
+              <span id="city">{city}</span>
+            </h2>
+            <p id="temperatura">{response2.data.main.temp}&deg;</p>
+          </div>
 
-      <div id="description-container">
-        <p id="description">Nublado</p>
-        <img
-          src="http://openweathermap.org/img/wn/02d@2x.png"
-          alt="ícone do clima"
-          id="weather-icon"
-        />
-      </div>
+          <div id="description-container">
+            <p id="description">Nublado</p>
+            <img
+              src="http://openweathermap.org/img/wn/02d@2x.png"
+              alt="ícone do clima"
+              id="weather-icon"
+            />
+          </div>
 
-      <div id="details-container">
-        <p id="umidity">
-          Umidade
-          <i class="fa-solid fa-droplet"></i>
-          <span>48%</span>
-        </p>
-        <p id="wind">
-          <i class="fa-solid fa-wind"></i>
-          <p id="wind">Vento</p>
-          <span>3km/h</span>
-        </p>
-      </div>
+          <div id="details-container">
+            <p id="umidity">
+              Umidade
+              <i className="fa-solid fa-droplet"></i>
+              <span>48%</span>
+            </p>
+            <p id="wind">
+              <i className="fa-solid fa-wind"></i>
+              <p id="wind">Vento</p>
+              <span>3km/h</span>
+            </p>
+          </div>
+        </>
+      )}
     </form>
   );
 }

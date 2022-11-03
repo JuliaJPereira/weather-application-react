@@ -4,8 +4,10 @@ Para acessar a aplicação, [clique aqui](https://application-weather-react.netl
 
 ## Recursos Utilizados
 
-### APIs: <br/>
+### Biblioteca: 
 - [Axios](https://axios-http.com/)
+
+### APIs: <br/>
 - [Weather API](https://openweathermap.org/api)
 - [Geocoding API](https://openweathermap.org/api/geocoding-api) <br/><br/>
 

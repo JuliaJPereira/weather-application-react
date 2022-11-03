@@ -1,10 +1,13 @@
 # Weather Application React
 
-Para acessar a aplicação, [clique aqui](https://application-weather-react.netlify.app/).
+Para acessar a aplicação, [clique aqui](https://application-weather-react.netlify.app/). <br/>
+
+Projeto produzido para fins de estudo de React e consumo de APIs.
 
 ## Recursos Utilizados
 
-### Biblioteca: 
+### Bibliotecas:
+- [React](https://reactjs.org/docs/getting-started.html)
 - [Axios](https://axios-http.com/)
 
 ### APIs: <br/>

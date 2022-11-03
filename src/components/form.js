@@ -19,35 +19,32 @@ function Form() {
     setWeather(response2.data);
     setCity('');
   };
-  console.log(weather);
   return (
     <form>
       <Label>
         <Input
           type={"text"}
-          className="input-city"
           placeholder="Busque por uma cidade"
           onChange={(e) => setCity(e.target.value)}
           value={city}
         />
-        <Button className="btn-search" onClick={onClick}>
+        <Button onClick={onClick}>
           Buscar
         </Button>
       </Label>
 
       {weather && (
         <>
-          <DivWeatherData id="weather-data">
+          <DivWeatherData>
             <h2>
-              <span id="city">{weather.name}</span>
+              <span>{weather.name}</span>
             </h2>
             <DivIconWeather>
               <img
                 src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
                 alt="ícone do clima"
-                id="weather-icon"
               />
-              <p id="temperatura">{weather.main.temp.toFixed()}&deg;</p>
+              <p>{weather.main.temp.toFixed()}&deg;</p>
             </DivIconWeather>
           </DivWeatherData>
         </>

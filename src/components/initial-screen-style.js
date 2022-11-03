@@ -20,11 +20,15 @@ export const Box = styled.div`
   border-radius: 20px;
   padding: 20px;
   padding-bottom: 50px;
-      box-shadow: 10px 10px 8px #1f1e1e;
+  box-shadow: 10px 10px 8px #1f1e1e;
 
   h1 {
     display: flex;
     justify-content: center;
     text-align: center;
+  }
+
+  @media screen and (max-width: 667px) {
+  width: 300px;
   }
 `;

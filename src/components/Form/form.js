@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { Input, Label, Button, DivIconWeather, DivWeatherData } from "./form-style";
+import { Input, Label, Button, DivIconWeather, DivWeatherData } from './styles'
 
 function Form() {
   const [city, setCity] = useState();

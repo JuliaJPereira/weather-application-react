@@ -1,16 +1,10 @@
-import InitialScreen from "./components/initial-screen";
-import { Box, Body } from "./components/initial-screen-style";
+import Home from "./components/Home/home";
 import "./App.css";
 
 function App() {
   return (
     <>
-    <Body>
-      <Box>
-          <InitialScreen></InitialScreen>
-      </Box>
-    </Body>
-      
+      <Home></Home>
     </>
   );
 }

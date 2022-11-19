@@ -21,7 +21,8 @@ Projeto produzido para fins de estudo de React e consumo de APIs.
 ## Application Preview
 
 - Mobile <br/><br/>
-![Captura de tela 2022-11-02 212645](https://user-images.githubusercontent.com/61914472/199627526-27aecb81-533b-443c-a432-2b06800c3ee8.png)
+![012_cipm_10 (2)](https://user-images.githubusercontent.com/61914472/200199184-37686bfa-443d-40da-953e-74e803d32062.png)
+![012_cipm_10 (1)](https://user-images.githubusercontent.com/61914472/200199146-35b6c22f-3244-4145-b111-e5dbfcfd8d60.png)
 <br/>
 
 - Desktop <br/><br/>
